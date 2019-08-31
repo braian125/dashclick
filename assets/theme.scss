@@ -339,7 +339,7 @@ header.navbar-inverse {
     float: left;
     margin: 0;
     /*agregado para el boostrap 4*/
-    margin-left: 215px;
+    margin-left: 70px;
 }
 
 .nav.navbar-nav-custom > li {
@@ -556,6 +556,7 @@ a.sidebar-title:focus {
     line-height: 40px;
     overflow: hidden;
     position: relative;
+    margin-bottom: 15px;
 }
 
 .sidebar-nav a:hover,
@@ -3558,6 +3559,7 @@ p, .table, .alert, .carousel {
     }
 
     #page-content {
+        min-height: 100vh;
         padding: 20px 20px 1px;
     }
 

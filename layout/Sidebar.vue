@@ -2,7 +2,7 @@
     <div id="sidebar">
         <div id="sidebar-brand" class="themed-background">
             <a href="/" class="sidebar-title">
-                <span class="sidebar-nav-mini-hide"><img src="@@/dashclick/assets/images/gosoft-brand.png" style="width: 50px;"></span>
+                <span class="sidebar-nav-mini-hide"><img src="@@/assets/images/gosoft-brand.png" style="width: 50px;"></span>
             </a>
         </div>
         <div id="sidebar-scroll">

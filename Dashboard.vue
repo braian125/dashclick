@@ -33,8 +33,8 @@ export default {
     },
     components: {
         //AlternativeSidebar,
-        Sidebar: () => import('@@/dashclick/layout/Sidebar'),
-        HeaderApp: () => import('@@/dashclick/layout/Header'),
+        Sidebar: () => import('@@/layout/Sidebar'),
+        HeaderApp: () => import('@@/layout/Header'),
         /*Breadcrumb: () => import('@@/layout/Breadcrumb')*/
     }
 }
