@@ -21,35 +21,20 @@
 export default {
     data: () => {
         return {
-            nav: [
-                {
-                    name: "Cuentas",
-                    to: "/cuentas",
-                    icon: "fa fa-user"
-                },
-                {
-                    name: "Reservas",
-                    to: "/reservas",
-                    icon: "fa fa-bed"
-                }
-            ]
         }
+    },
+    props: {
+    },
+    computed: {
+      nav() {
+        return this.$store.getters.sidebarNav || []
+      }
     },
     components: {
         SidebarNav: () => import(/* webpackChunkName: "SidebarNav" */ './SidebarNav')
     },
     created() {
-        /*this.$store.dispatch('index', {endpoint: 'modulo'})
-        .then((response) => {
-            this.nav = response;
-        })
-        .catch(() => {
-            this.$notify({
-                title: 'Advertencia!',
-                type: 'warning',
-                content: 'Error cargando módulos',
-            })
-        })*/
+      
     }
 }
 </script>
