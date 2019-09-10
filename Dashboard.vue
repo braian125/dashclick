@@ -1,7 +1,7 @@
 <template>
     <div id="page-wrapper">
         <div id="page-container" class="header-fixed-top sidebar-d-none d-lg-block d-xl-none-full" v-bind:class="{ 'sidebar-visible-lg-full' : sidebarFull, 'sidebar-visible-lg-mini' : sidebarMini }">
-        <!--alternative-sidebar/-->
+        <sidebar-alt/>
         <sidebar/>
         <div id="main-container">
             <header-app @sidebarToggle="sidebarToggle" />
@@ -32,7 +32,7 @@ export default {
         }
     },
     components: {
-        //AlternativeSidebar,
+        SidebarAlt: () => import('@@/dashclick/layout/SidebarAlt'),
         Sidebar: () => import('@@/layout/Sidebar'),
         HeaderApp: () => import('@@/layout/Header'),
         /*Breadcrumb: () => import('@@/layout/Breadcrumb')*/
