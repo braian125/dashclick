@@ -4,7 +4,7 @@
         <!--alternative-sidebar/-->
         <sidebar/>
         <div id="main-container">
-            <header-app @sidebarToggle="sidebarToggle" />
+            <header-app @sidebarToggle="sidebarToggle" @logout="logout" />
             <div id="page-content">
                 <!--breadcrumb/-->
                 <router-view/>
@@ -14,9 +14,6 @@
     </div>
 </template>
 <script>
-/*import AlternativeSidebar from '@@/layout/AlternativeSidebar'
-import Sidebar from '@@/layout/Sidebar'
-import HeaderApp from '@@/layout/Header'*/
 
 export default {
     data: () => {
@@ -25,10 +22,25 @@ export default {
             sidebarMini: false
         }
     },
+    props: {
+      user: {
+          type: Object,
+          required: false,
+          default: () => {}
+      },
+      getSidebarNav: {
+          type: Boolean,
+          required: false,
+          default: () => false
+      }
+    },
     methods: {
         sidebarToggle() {
             this.sidebarFull = !this.sidebarFull;
             this.sidebarMini = !this.sidebarMini;
+        },
+        logout() {
+            this.$emit('logout')
         }
     },
     components: {
@@ -36,6 +48,21 @@ export default {
         Sidebar: () => import('@@/layout/Sidebar'),
         HeaderApp: () => import('@@/layout/Header'),
         /*Breadcrumb: () => import('@@/layout/Breadcrumb')*/
+    },
+    created() {
+      if (this.getSidebarNav) {
+        this.$store.dispatch('fetch', {endpoint: 'admin/component'})
+        .then((response) => {
+          this.$store.commit('SET_SIDEBARN_NAV', response)
+        })
+        .catch(() => {
+          this.$notify({
+            title: 'Advertencia!',
+            type: 'warning',
+            content: 'Error cargando módulos',
+          })
+        })
+      }
     }
 }
 </script>

@@ -79,7 +79,7 @@
                         </a>
                     </li>
                     <li class="dropdown-item">
-                        <a href="" @click="logout">
+                        <a href="#" @click="logout">
                             <i class="fa fa-power-off fa-fw float-right"></i>
                             Cerrar Sesión
                         </a>
@@ -99,6 +99,9 @@ export default {
             userNavItem: false
         }
     },
+    props: {
+        
+    },
     computed: {
         user() {
             return this.$store?this.$store.getters['auth/user']:{}
@@ -109,7 +112,7 @@ export default {
             this.$emit('sidebarToggle')
         },
         logout() {
-            //this.$store.dispatch('user/logout')
+            this.$emit('logout');
         }
     }
 }
