@@ -6,7 +6,7 @@
         <div id="main-container">
             <header-app @sidebarToggle="sidebarToggle" />
             <div id="page-content">
-                <!--breadcrumb/-->
+                <breadcrumb :breadcrumb="breadcrumb"/>
                 <router-view/>
             </div>
         </div>
@@ -22,17 +22,24 @@ export default {
             sidebarMini: false
         }
     },
+    computed: {
+        breadcrumb() {
+            return this.$route.matched.filter(
+                route => route.name || route.meta.label
+            );
+        }
+    },
+    components: {
+        SidebarAlt: () => import(/* webpackChunkName: "sidebarAlt" */ '@@/layout/SidebarAlt'),
+        Sidebar: () => import(/* webpackChunkName: "sidebar" */ '@@/layout/Sidebar'),
+        HeaderApp: () => import(/* webpackChunkName: "header" */ '@@/layout/Header'),
+        Breadcrumb: () => import(/* webpackChunkName: "breadcrumb" */ '@@/layout/Breadcrumb')
+    },
     methods: {
         sidebarToggle() {
             this.sidebarFull = !this.sidebarFull;
             this.sidebarMini = !this.sidebarMini;
         }
-    },
-    components: {
-        SidebarAlt: () => import(/* webpackChunkName: "sidebarAlt" */ '@@/dashclick/layout/SidebarAlt'),
-        Sidebar: () => import(/* webpackChunkName: "sidebar" */ '@@/layout/Sidebar'),
-        HeaderApp: () => import(/* webpackChunkName: "header" */ '@@/layout/Header'),
-        /*Breadcrumb: () => import('@@/layout/Breadcrumb')*/
     }
 }
 </script>
