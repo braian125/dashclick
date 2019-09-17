@@ -14,9 +14,6 @@
     </div>
 </template>
 <script>
-/*import AlternativeSidebar from '@@/layout/AlternativeSidebar'
-import Sidebar from '@@/layout/Sidebar'
-import HeaderApp from '@@/layout/Header'*/
 
 export default {
     data: () => {
@@ -32,9 +29,9 @@ export default {
         }
     },
     components: {
-        SidebarAlt: () => import('@@/dashclick/layout/SidebarAlt'),
-        Sidebar: () => import('@@/layout/Sidebar'),
-        HeaderApp: () => import('@@/layout/Header'),
+        SidebarAlt: () => import(/* webpackChunkName: "sidebarAlt" */ '@@/dashclick/layout/SidebarAlt'),
+        Sidebar: () => import(/* webpackChunkName: "sidebar" */ '@@/layout/Sidebar'),
+        HeaderApp: () => import(/* webpackChunkName: "header" */ '@@/layout/Header'),
         /*Breadcrumb: () => import('@@/layout/Breadcrumb')*/
     }
 }
