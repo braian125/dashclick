@@ -4,7 +4,7 @@
         <sidebar-alt/>
         <sidebar/>
         <div id="main-container">
-            <header-app @sidebarToggle="sidebarToggle" />
+            <header-app @sidebarToggle="sidebarToggle" @logout="logout" />
             <div id="page-content">
                 <breadcrumb :breadcrumb="breadcrumb"/>
                 <router-view/>
@@ -39,6 +39,17 @@ export default {
         sidebarToggle() {
             this.sidebarFull = !this.sidebarFull;
             this.sidebarMini = !this.sidebarMini;
+        },
+        logout() {
+          if (this.$store) {
+            this.$store.dispatch('auth/logout')
+            .then(() => {
+              this.$router.push({ path: "/login" });
+            })
+            .catch(() => {
+
+            })
+          }
         }
     }
 }
