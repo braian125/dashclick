@@ -89,7 +89,7 @@ export default {
     },
     computed: {
         user() {
-            return this.$store?this.$store.getters['auth/user']:{}
+            return this.$store?this.$store.state.auth.user:{}
         }
     },
     methods: {

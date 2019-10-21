@@ -234,13 +234,7 @@ header.navbar.navbar-fixed-bottom {
 }
 
 /* Sidebar + Fixed Layout */
-#page-container.header-fixed-top #page-content {
-    padding-top: 60px;
-}
 
-#page-container.header-fixed-bottom #page-content {
-    padding-bottom: 60px;
-}
 
 #page-container.header-fixed-top #sidebar {
     position: fixed;
@@ -3563,14 +3557,6 @@ p, .table, .alert, .carousel {
     #page-content {
         min-height: 100vh;
         padding: 20px 20px 1px;
-    }
-
-    #page-container.header-fixed-top #page-content {
-        padding-top: 62px;
-    }
-
-    #page-container.header-fixed-bottom #page-content {
-        padding-bottom: 62px;
     }
 
     #page-content.inner-sidebar-left,
