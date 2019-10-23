@@ -27,14 +27,14 @@ export default {
     },
     computed: {
       nav() {
-        return this.$store.getters.sidebarNav || []
+        return this.$store.getters['layout/sidebarNav'] || []
       }
     },
     components: {
         SidebarNav: () => import(/* webpackChunkName: "SidebarNav" */ './SidebarNav')
     },
     created() {
-      
+
     }
 }
 </script>
