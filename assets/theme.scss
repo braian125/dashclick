@@ -129,6 +129,11 @@ body {
     transition: background-color .2s ease-out, opacity .3s ease-out;
 }
 
+#actions-bar {
+    background-color: #F2F3F4;
+    padding: 15px;
+}
+
 #page-content {
     padding: 10px 5px 1px;
     background-color: $page-content;
@@ -3555,7 +3560,7 @@ p, .table, .alert, .carousel {
 
     #page-content {
         min-height: 100vh;
-        padding: 20px 20px 1px;
+        padding: 56px 0px 0px 70px;
     }
 
     #page-content.inner-sidebar-left,

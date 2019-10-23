@@ -6,6 +6,7 @@
             <div id="main-container">
                 <header-app @sidebarToggle="sidebarToggle" @logout="logout" />
                 <div id="page-content">
+                    <div id="actions-bar" class="w-100"></div>
                     <breadcrumb :breadcrumb="breadcrumb"/>
                     <router-view/>
                 </div>
@@ -16,6 +17,7 @@
 <script>
 
 export default {
+    name: 'Dashclick',
     data: () => {
         return {
             sidebarFull: true,
