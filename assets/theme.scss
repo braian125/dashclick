@@ -131,7 +131,28 @@ body {
 
 #actions-bar {
     background-color: #F2F3F4;
-    padding: 15px;
+    padding: 5px 50px;
+
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+
+        }
+    }
+
+    a {
+        color: #626567;
+        font-size: 22px;
+    }
+
+    a:hover {
+        color: $sidebar-color;
+    }
 }
 
 #page-content {

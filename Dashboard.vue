@@ -6,7 +6,7 @@
             <div id="main-container">
                 <header-app @sidebarToggle="sidebarToggle" @logout="logout" />
                 <div id="page-content">
-                    <div id="actions-bar" class="w-100"></div>
+                    <action-bar :actions="childrenNavs.children" />
                     <breadcrumb :breadcrumb="breadcrumb"/>
                     <router-view/>
                 </div>
@@ -29,13 +29,15 @@ export default {
             return this.$route.matched.filter(
                 route => route.name || route.meta.label
             );
-        }
+        },
+
     },
     components: {
         SidebarAlt: () => import(/* webpackChunkName: "sidebarAlt" */ '@@/layout/SidebarAlt'),
         Sidebar: () => import(/* webpackChunkName: "sidebar" */ '@@/layout/Sidebar'),
         HeaderApp: () => import(/* webpackChunkName: "header" */ '@@/layout/Header'),
-        Breadcrumb: () => import(/* webpackChunkName: "breadcrumb" */ '@@/layout/Breadcrumb')
+        Breadcrumb: () => import(/* webpackChunkName: "breadcrumb" */ '@@/layout/Breadcrumb'),
+        ActionBar: () => import(/* webpackChunkName: "actionBar" */ '@@/layout/ActionBar')
     },
     methods: {
         sidebarToggle() {
