@@ -43,19 +43,11 @@ export default {
     },
     methods: {
         sidebarToggle() {
-            this.sidebarFull = !this.sidebarFull;
-            this.sidebarMini = !this.sidebarMini;
+          this.sidebarFull = !this.sidebarFull;
+          this.sidebarMini = !this.sidebarMini;
         },
         logout() {
-          if (this.$store) {
-            this.$store.dispatch('auth/logout')
-            .then(() => {
-              this.$router.push({ path: "/login" });
-            })
-            .catch(() => {
 
-            })
-          }
         }
     }
 }

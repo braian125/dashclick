@@ -32,9 +32,8 @@
                     <img :src="user.avatar || 'https://i.pravatar.cc/150?u=bvanegas@gosoft.co'" alt="avatar">
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right">
-                    <li class="dropdown-header dropdown-item" v-if="user"> <strong>{{ user.name || 'Brian' }} {{ user.last_name || 'Vanegas' }}</strong>
-                    </li>
-                    <li class="dropdown-item">
+                    <li class="dropdown-header dropdown-item" v-if="user"> <strong>{{ user.name || 'Brian' }} {{ user.last_name || 'Vanegas' }}</strong></li>
+                    <!--li class="dropdown-item">
                         <a href="page_app_email.html">
                             <i class="fa fa-inbox fa-fw float-right"></i>
                             Inbox
@@ -65,7 +64,7 @@
                             <i class="gi gi-lock fa-fw float-right"></i>
                             Bloqueo de Pantalla
                         </a>
-                    </li>
+                    </li-->
                     <li class="dropdown-item">
                         <a href="#" @click="logout">
                             <i class="fa fa-power-off fa-fw float-right"></i>
@@ -94,10 +93,11 @@ export default {
     },
     methods: {
         sidebarToggle () {
-            this.$emit('sidebarToggle')
+          this.$emit('sidebarToggle')
         },
-        logout() {
-            this.$emit('logout');
+        async logout() {
+          this.$store.dispatch('auth/logout')
+          this.$router.go('/login');
         }
     }
 }
