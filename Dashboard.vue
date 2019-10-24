@@ -30,7 +30,9 @@ export default {
                 route => route.name || route.meta.label
             );
         },
-
+        childrenNavs() {
+            return this.$store.getters['layout/sidebarNav'].find(nav => nav.url == this.$route.path) || []
+        }
     },
     components: {
         SidebarAlt: () => import(/* webpackChunkName: "sidebarAlt" */ '@@/layout/SidebarAlt'),
