@@ -10,16 +10,21 @@
 <script>
 export default {
   props: {
-    breadcrumb: {
+    /*breadcrumb: {
       type: Array,
       required: true,
       default: () => []
-    }
+    }*/
   },
   computed: {
     routeRecords: function () {
       return this.breadcrumb.filter((route) => route.name || route.meta.label)
-    }
+    },
+    breadcrumb() {
+      return this.$route.matched.filter(
+          route => route.name || route.meta.label
+      );
+    },
   },
   methods: {
     getName (item) {

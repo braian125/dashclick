@@ -7,7 +7,7 @@
                 <header-app @sidebarToggle="sidebarToggle" @logout="logout" />
                 <div id="page-content">
                     <action-bar :actions="childrenNavs.children" />
-                    <breadcrumb :breadcrumb="breadcrumb"/>
+                    <!--breadcrumb :breadcrumb="breadcrumb"/-->
                     <router-view/>
                 </div>
             </div>
@@ -25,11 +25,6 @@ export default {
         }
     },
     computed: {
-        breadcrumb() {
-            return this.$route.matched.filter(
-                route => route.name || route.meta.label
-            );
-        },
         childrenNavs() {
             return this.$store.getters['layout/sidebarNav'].find(nav => nav.url == this.$route.path) || []
         }
@@ -38,7 +33,6 @@ export default {
         SidebarAlt: () => import(/* webpackChunkName: "sidebarAlt" */ '@@/layout/SidebarAlt'),
         Sidebar: () => import(/* webpackChunkName: "sidebar" */ '@@/layout/Sidebar'),
         HeaderApp: () => import(/* webpackChunkName: "header" */ '@@/layout/Header'),
-        Breadcrumb: () => import(/* webpackChunkName: "breadcrumb" */ '@@/layout/Breadcrumb'),
         ActionBar: () => import(/* webpackChunkName: "actionBar" */ '@@/layout/ActionBar')
     },
     methods: {
