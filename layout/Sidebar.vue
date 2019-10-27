@@ -34,7 +34,9 @@ export default {
         SidebarNav: () => import(/* webpackChunkName: "SidebarNav" */ './SidebarNav')
     },
     created() {
-
+        if (this.$store) {
+            this.$store.dispatch('layout/getSidebarNav')
+        }
     }
 }
 </script>
