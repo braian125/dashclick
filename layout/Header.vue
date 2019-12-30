@@ -12,7 +12,7 @@
             </li>
         </ul>
         <ul class="nav navbar-nav-custom float-right">
-            <li class="nav-item">
+            <!--li class="nav-item">
                 <form action="page_ready_search_results.html" method="post" class="form-inline-custom">
                     <input type="text" id="top-search" name="top-search" class="form-control" placeholder="Buscar...">
                 </form>
@@ -26,7 +26,7 @@
                 <a href="javascript:void(0)" onclick="App.sidebar(&apos;toggle-sidebar-alt&apos;);this.blur();" class="nav-link">
                     <i class="gi gi-bell pulse" style="padding-top: 6px;"></i>
                 </a>
-            </li>
+            </li-->
             <li class="dropdown nav-item"  v-bind:class="{ open: userNavItem }" v-on:click="userNavItem = !userNavItem" style="margin-right: 10px;">
                 <a href="javascript:void(0)" class="dropdown-toggle nav-link" data-toggle="dropdown">
                     <img :src="user.avatar || 'https://i.pravatar.cc/150?u=bvanegas@gosoft.co'" alt="avatar">
