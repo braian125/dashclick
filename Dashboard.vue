@@ -47,5 +47,4 @@ export default {
 }
 </script>
 
-<style lang="scss" src="@@/assets/scss/theme.scss"></style>
 <style lang="scss" src="@@/assets/scss/custom.scss"></style>
