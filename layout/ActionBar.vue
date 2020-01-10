@@ -7,7 +7,9 @@
             <ul>
                 <li v-for="(action, index) in actions" class="d-inline p-2">
                     <router-link :to="action.url" :key="index">
-                        <font-awesome-icon :icon="action.icon || 'rocket'"></font-awesome-icon>
+                        <el-tooltip class="item" effect="dark" :content="action.name" placement="bottom">
+                            <font-awesome-icon :icon="action.icon || 'rocket'"></font-awesome-icon>
+                        </el-tooltip>
                     </router-link>
                 </li>
             </ul>
