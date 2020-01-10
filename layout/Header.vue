@@ -66,6 +66,12 @@
                         </a>
                     </li-->
                     <li class="dropdown-item">
+                        <router-link :to="{name: 'company'}">
+                            <i class="fa fa-power-off fa-fw float-right"></i>
+                            Administración
+                        </router-link>
+                    </li>
+                    <li class="dropdown-item">
                         <a href="#" @click="logout">
                             <i class="fa fa-power-off fa-fw float-right"></i>
                             Cerrar Sesión
